@@ -1,6 +1,9 @@
 class Transaction < ApplicationRecord
   # Direct associations
 
+  belongs_to :status,
+             :counter_cache => true
+
   belongs_to :buyer,
              :class_name => "User",
              :counter_cache => true

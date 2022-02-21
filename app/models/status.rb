@@ -1,6 +1,8 @@
 class Status < ApplicationRecord
   # Direct associations
 
+  has_many   :transactions
+
   # Indirect associations
 
   # Validations
