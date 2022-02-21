@@ -6,27 +6,21 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Buyer</dt>
-      <!-- Display buyer_id start -->
       <dd>
         <% if @transaction.buyer.present? %>
           <%= link_to transaction.buyer, transaction.buyer %>
         <% end %>
       </dd>
-      <!-- Display buyer_id end -->
 
       <dt>Item</dt>
-      <!-- Display item_id start -->
       <dd><%= transaction.item_id %></dd>
-      <!-- Display item_id end -->
 
       <dt>Status</dt>
-      <!-- Display status_id start -->
       <dd>
         <% if @transaction.status.present? %>
           <%= link_to transaction.status, transaction.status %>
         <% end %>
       </dd>
-      <!-- Display status_id end -->
 
     </dl>
 
@@ -35,21 +29,17 @@
         <%= link_to_show_or_back transaction, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link transaction start -->
       <div class="col">
         <%= link_to edit_transaction_url(transaction), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link transaction end -->
 
-      <!-- Delete link transaction start -->
       <div class="col">
         <%= link_to transaction, method: :delete, data: { confirm: "Do you really want to delete this transaction?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link transaction end -->
     </div>
   </div>
 

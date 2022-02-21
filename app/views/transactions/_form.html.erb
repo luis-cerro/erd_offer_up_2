@@ -1,7 +1,6 @@
 <% was_validated = transaction.errors.any? %>
 
 <%= form_with(model: transaction, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for buyer_id start -->
   <div class="form-group">
     <% buyer_class = "form-control" %>
     <% buyer_was_invalid = transaction.errors.include?(:buyer) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :buyer_id %>
-    <!-- Input for buyer_id start -->
     <%= f.collection_select :buyer_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for buyer_id end -->
     <% if buyer_was_invalid %>
       <% transaction.errors.full_messages_for(:buyer).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for buyer_id end -->
-  <!-- Label and input for item_id start -->
   <div class="form-group">
     <% item_class = "form-control" %>
     <% item_was_invalid = transaction.errors.include?(:item) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :item_id %>
-    <!-- Input for item_id start -->
     <%= f.number_field :item_id, class: item_class, placeholder: "Enter item" %>
-    <!-- Input for item_id end -->
     <% if item_was_invalid %>
       <% transaction.errors.full_messages_for(:item).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for item_id end -->
-  <!-- Label and input for status_id start -->
   <div class="form-group">
     <% status_class = "form-control" %>
     <% status_was_invalid = transaction.errors.include?(:status) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :status_id %>
-    <!-- Input for status_id start -->
     <%= f.collection_select :status_id, Status.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for status_id end -->
     <% if status_was_invalid %>
       <% transaction.errors.full_messages_for(:status).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for status_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
