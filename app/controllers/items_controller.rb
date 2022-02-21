@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :current_user_must_be_item_owner, only: [:edit, :update, :destroy] 
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -57,6 +59,14 @@ class ItemsController < ApplicationController
 
 
   private
+
+  def current_user_must_be_item_owner
+    set_item
+    unless current_user == @item.owner
+      redirect_back fallback_location: root_path, alert: "You are not authorized for that."
+    end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
