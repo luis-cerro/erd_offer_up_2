@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  belongs_to :item_status,
+             :class_name => "Status",
+             :counter_cache => true
+
   belongs_to :owner,
              :class_name => "User",
              :counter_cache => true
