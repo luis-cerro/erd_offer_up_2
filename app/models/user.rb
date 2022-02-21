@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :items,
+             :foreign_key => "owner_id"
+
   has_many   :transactions,
              :foreign_key => "buyer_id"
 
