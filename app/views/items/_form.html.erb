@@ -42,7 +42,7 @@
 
     <%= f.label :item_status_id %>
     <!-- Input for item_status_id start -->
-    <%= f.number_field :item_status_id, class: item_status_class, placeholder: "Enter item status" %>
+    <%= f.collection_select :item_status_id, Status.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for item_status_id end -->
     <% if item_status_was_invalid %>
       <% item.errors.full_messages_for(:item_status).each do |message| %>
