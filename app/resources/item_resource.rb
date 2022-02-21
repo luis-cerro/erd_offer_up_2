@@ -12,6 +12,9 @@ class ItemResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :item_category,
+             resource: CategoryResource
+
   # Indirect associations
 
 end
