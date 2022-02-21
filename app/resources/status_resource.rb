@@ -6,6 +6,9 @@ class StatusResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :items,
+             foreign_key: :item_status_id
+
   has_many   :transactions
 
   # Indirect associations

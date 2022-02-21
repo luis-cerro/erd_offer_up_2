@@ -12,6 +12,9 @@ class ItemResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :item_status,
+             resource: StatusResource
+
   belongs_to :owner,
              resource: UserResource
 
