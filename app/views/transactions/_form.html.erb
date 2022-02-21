@@ -1,0 +1,83 @@
+<% was_validated = transaction.errors.any? %>
+
+<%= form_with(model: transaction, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for buyer_id start -->
+  <div class="form-group">
+    <% buyer_class = "form-control" %>
+    <% buyer_was_invalid = transaction.errors.include?(:buyer) %>
+
+    <% if was_validated %>
+      <% if buyer_was_invalid %>
+        <% buyer_class << " is-invalid" %>
+      <% else %>
+        <% buyer_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :buyer_id %>
+    <!-- Input for buyer_id start -->
+    <%= f.number_field :buyer_id, class: buyer_class, placeholder: "Enter buyer" %>
+    <!-- Input for buyer_id end -->
+    <% if buyer_was_invalid %>
+      <% transaction.errors.full_messages_for(:buyer).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for buyer_id end -->
+  <!-- Label and input for item_id start -->
+  <div class="form-group">
+    <% item_class = "form-control" %>
+    <% item_was_invalid = transaction.errors.include?(:item) %>
+
+    <% if was_validated %>
+      <% if item_was_invalid %>
+        <% item_class << " is-invalid" %>
+      <% else %>
+        <% item_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :item_id %>
+    <!-- Input for item_id start -->
+    <%= f.number_field :item_id, class: item_class, placeholder: "Enter item" %>
+    <!-- Input for item_id end -->
+    <% if item_was_invalid %>
+      <% transaction.errors.full_messages_for(:item).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for item_id end -->
+  <!-- Label and input for status_id start -->
+  <div class="form-group">
+    <% status_class = "form-control" %>
+    <% status_was_invalid = transaction.errors.include?(:status) %>
+
+    <% if was_validated %>
+      <% if status_was_invalid %>
+        <% status_class << " is-invalid" %>
+      <% else %>
+        <% status_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :status_id %>
+    <!-- Input for status_id start -->
+    <%= f.number_field :status_id, class: status_class, placeholder: "Enter status" %>
+    <!-- Input for status_id end -->
+    <% if status_was_invalid %>
+      <% transaction.errors.full_messages_for(:status).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for status_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
