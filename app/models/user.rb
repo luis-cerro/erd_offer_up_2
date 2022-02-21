@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :transactions,
+             :foreign_key => "buyer_id"
+
   # Indirect associations
 
   # Validations
