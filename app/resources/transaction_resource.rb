@@ -8,6 +8,9 @@ class TransactionResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :buyer,
+             resource: UserResource
+
   # Indirect associations
 
 end
