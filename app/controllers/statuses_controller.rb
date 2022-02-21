@@ -8,6 +8,8 @@ class StatusesController < ApplicationController
 
   # GET /statuses/1
   def show
+    @item = Item.new
+    @transaction = Transaction.new
   end
 
   # GET /statuses/new
