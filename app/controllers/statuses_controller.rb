@@ -3,7 +3,8 @@ class StatusesController < ApplicationController
 
   # GET /statuses
   def index
-    @statuses = Status.page(params[:page]).per(10)
+    @q = Status.ransack(params[:q])
+    @statuses = @q.result(:distinct => true).includes(:transactions, :items).page(params[:page]).per(10)
   end
 
   # GET /statuses/1
