@@ -12,7 +12,11 @@
 
       <dt>Item status</dt>
       <!-- Display item_status_id start -->
-      <dd><%= item.item_status_id %></dd>
+      <dd>
+        <% if @item.item_status.present? %>
+          <%= link_to item.item_status, item.item_status %>
+        <% end %>
+      </dd>
       <!-- Display item_status_id end -->
 
       <dt>Item title</dt>
@@ -22,7 +26,11 @@
 
       <dt>Item category</dt>
       <!-- Display item_category_id start -->
-      <dd><%= item.item_category_id %></dd>
+      <dd>
+        <% if @item.item_category.present? %>
+          <%= link_to item.item_category, item.item_category %>
+        <% end %>
+      </dd>
       <!-- Display item_category_id end -->
 
       <dt>Item location</dt>
@@ -36,7 +44,11 @@
 
       <dt>Owner</dt>
       <!-- Display owner_id start -->
-      <dd><%= item.owner_id %></dd>
+      <dd>
+        <% if @item.owner.present? %>
+          <%= link_to item.owner, item.owner %>
+        <% end %>
+      </dd>
       <!-- Display owner_id end -->
 
       <dt>Price</dt>

@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>Buyer</dt>
       <!-- Display buyer_id start -->
-      <dd><%= transaction.buyer_id %></dd>
+      <dd>
+        <% if @transaction.buyer.present? %>
+          <%= link_to transaction.buyer, transaction.buyer %>
+        <% end %>
+      </dd>
       <!-- Display buyer_id end -->
 
       <dt>Item</dt>
@@ -17,7 +21,11 @@
 
       <dt>Status</dt>
       <!-- Display status_id start -->
-      <dd><%= transaction.status_id %></dd>
+      <dd>
+        <% if @transaction.status.present? %>
+          <%= link_to transaction.status, transaction.status %>
+        <% end %>
+      </dd>
       <!-- Display status_id end -->
 
     </dl>
