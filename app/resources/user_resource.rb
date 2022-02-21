@@ -15,5 +15,4 @@ class UserResource < ApplicationResource
              foreign_key: :buyer_id
 
   # Indirect associations
-
 end

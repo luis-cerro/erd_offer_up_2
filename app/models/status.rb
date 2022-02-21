@@ -2,7 +2,7 @@ class Status < ApplicationRecord
   # Direct associations
 
   has_many   :items,
-             :foreign_key => "item_status_id"
+             foreign_key: "item_status_id"
 
   has_many   :transactions
 
@@ -15,5 +15,4 @@ class Status < ApplicationRecord
   def to_s
     status_description
   end
-
 end

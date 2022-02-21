@@ -22,5 +22,4 @@ class ItemResource < ApplicationResource
              resource: CategoryResource
 
   # Indirect associations
-
 end

@@ -14,5 +14,4 @@ class TransactionResource < ApplicationResource
              resource: UserResource
 
   # Indirect associations
-
 end

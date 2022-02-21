@@ -1,6 +1,6 @@
 ActiveAdmin.register Item do
-
- permit_params :item_description, :item_status_id, :item_title, :item_category_id, :item_location, :owner_id, :price
+  permit_params :item_description, :item_status_id, :item_title,
+                :item_category_id, :item_location, :owner_id, :price
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +14,4 @@ ActiveAdmin.register Item do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
 end

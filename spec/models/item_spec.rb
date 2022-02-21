@@ -1,22 +1,17 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Item, type: :model do
-  
-    describe "Direct Associations" do
-
+  describe "Direct Associations" do
     it { should belong_to(:item_status) }
 
     it { should belong_to(:owner) }
 
     it { should belong_to(:item_category) }
+  end
 
-    end
+  describe "InDirect Associations" do
+  end
 
-    describe "InDirect Associations" do
-
-    end
-
-    describe "Validations" do
-
-    end
+  describe "Validations" do
+  end
 end

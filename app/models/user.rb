@@ -1,13 +1,12 @@
 class User < ApplicationRecord
-  
   include JwtToken
-# Direct associations
+  # Direct associations
 
   has_many   :items,
-             :foreign_key => "owner_id"
+             foreign_key: "owner_id"
 
   has_many   :transactions,
-             :foreign_key => "buyer_id"
+             foreign_key: "buyer_id"
 
   # Indirect associations
 

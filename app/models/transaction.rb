@@ -2,11 +2,11 @@ class Transaction < ApplicationRecord
   # Direct associations
 
   belongs_to :status,
-             :counter_cache => true
+             counter_cache: true
 
   belongs_to :buyer,
-             :class_name => "User",
-             :counter_cache => true
+             class_name: "User",
+             counter_cache: true
 
   # Indirect associations
 
@@ -17,5 +17,4 @@ class Transaction < ApplicationRecord
   def to_s
     buyer.to_s
   end
-
 end

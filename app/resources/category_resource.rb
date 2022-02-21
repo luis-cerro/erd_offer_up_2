@@ -10,5 +10,4 @@ class CategoryResource < ApplicationResource
              foreign_key: :item_category_id
 
   # Indirect associations
-
 end
